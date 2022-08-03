@@ -275,7 +275,8 @@ kbl(x = sector_avg, booktabs = T,
   kable_styling(latex_options = "striped") %>%
   column_spec(column = 2, 
               color = spec_color(sector_avg$percent_increase_in_mens_wages_compared_to_womens, 
-                                 option = "A"))
+                                 option = "A", 
+                                 end = 0.8))
 ```
 
 This second example uses the code from the `sector_averages.R` script, then we display the output using `kableExtra`. I've included the code here but you can use chunk options to stop the code showing, such as using ` echo=FALSE`. I've also included `message=FALSE` and `warning=FALSE` in as chunk options so we don't get loading messages and such. 
@@ -330,8 +331,9 @@ kbl(x = paygap_top, booktabs = T,
     percent gap in men’s wages compared to women’s wages.") %>% 
   kable_styling(latex_options = "striped") %>%
   column_spec(column = 2, 
-              color = spec_color(paygap_top$percent_increase_in_mens_wages_compared_to_womens, 
-                                 option = "A"))
+              color = spec_color(sector_avg$percent_increase_in_mens_wages_compared_to_womens, 
+                                 option = "A", 
+                                 end = 0.8))
 ```
 
 I should also note that the above idea of including your scripts in your document also applies to the `paygap.png` image we added which is generated from the `paygap.R` script. 

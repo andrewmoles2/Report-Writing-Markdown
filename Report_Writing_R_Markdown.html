@@ -1251,7 +1251,8 @@ we display it using <code>kableExtra</code>.</p>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">latex_options =</span> <span class="st">&quot;striped&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="at">column =</span> <span class="dv">2</span>, </span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="fu">spec_color</span>(sector_avg<span class="sc">$</span>percent_increase_in_mens_wages_compared_to_womens, </span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">option =</span> <span class="st">&quot;A&quot;</span>))</span></code></pre></div>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">option =</span> <span class="st">&quot;A&quot;</span>, </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">end =</span> <span class="fl">0.8</span>))</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 Table to show the sectors with, on average, the largest percent gap in
@@ -1272,7 +1273,7 @@ Sector
 <td style="text-align:center;">
 primary
 </td>
-<td style="text-align:center;color: rgba(252, 253, 191, 1) !important;">
+<td style="text-align:center;color: rgba(254, 159, 109, 1) !important;">
 0.2835
 </td>
 </tr>
@@ -1280,7 +1281,7 @@ primary
 <td style="text-align:center;">
 secondary
 </td>
-<td style="text-align:center;color: rgba(249, 121, 93, 1) !important;">
+<td style="text-align:center;color: rgba(213, 68, 109, 1) !important;">
 0.2494
 </td>
 </tr>
@@ -1288,7 +1289,7 @@ secondary
 <td style="text-align:center;">
 education
 </td>
-<td style="text-align:center;color: rgba(232, 83, 98, 1) !important;">
+<td style="text-align:center;color: rgba(184, 55, 121, 1) !important;">
 0.2383
 </td>
 </tr>
@@ -1296,7 +1297,7 @@ education
 <td style="text-align:center;">
 financial
 </td>
-<td style="text-align:center;color: rgba(144, 42, 129, 1) !important;">
+<td style="text-align:center;color: rgba(110, 30, 129, 1) !important;">
 0.2112
 </td>
 </tr>
@@ -1304,7 +1305,7 @@ financial
 <td style="text-align:center;">
 construction
 </td>
-<td style="text-align:center;color: rgba(100, 26, 128, 1) !important;">
+<td style="text-align:center;color: rgba(76, 17, 122, 1) !important;">
 0.1978
 </td>
 </tr>
@@ -1312,7 +1313,7 @@ construction
 <td style="text-align:center;">
 technology
 </td>
-<td style="text-align:center;color: rgba(84, 19, 125, 1) !important;">
+<td style="text-align:center;color: rgba(63, 15, 114, 1) !important;">
 0.1932
 </td>
 </tr>
@@ -1320,7 +1321,7 @@ technology
 <td style="text-align:center;">
 information
 </td>
-<td style="text-align:center;color: rgba(71, 16, 120, 1) !important;">
+<td style="text-align:center;color: rgba(51, 16, 104, 1) !important;">
 0.1892
 </td>
 </tr>
@@ -1328,7 +1329,7 @@ information
 <td style="text-align:center;">
 head
 </td>
-<td style="text-align:center;color: rgba(2, 2, 11, 1) !important;">
+<td style="text-align:center;color: rgba(2, 1, 9, 1) !important;">
 0.1640
 </td>
 </tr>
@@ -1336,7 +1337,7 @@ head
 <td style="text-align:center;">
 offices
 </td>
-<td style="text-align:center;color: rgba(2, 2, 11, 1) !important;">
+<td style="text-align:center;color: rgba(2, 1, 9, 1) !important;">
 0.1640
 </td>
 </tr>
@@ -1407,8 +1408,9 @@ loading messages and such.</p>
 <span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="st">    percent gap in men’s wages compared to women’s wages.&quot;</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">latex_options =</span> <span class="st">&quot;striped&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="at">column =</span> <span class="dv">2</span>, </span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="fu">spec_color</span>(paygap_top<span class="sc">$</span>percent_increase_in_mens_wages_compared_to_womens, </span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">option =</span> <span class="st">&quot;A&quot;</span>))</span></code></pre></div>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="fu">spec_color</span>(sector_avg<span class="sc">$</span>percent_increase_in_mens_wages_compared_to_womens, </span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">option =</span> <span class="st">&quot;A&quot;</span>, </span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">end =</span> <span class="fl">0.8</span>))</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 Table to show the sectors with, on average, the largest percent gap in
@@ -1429,7 +1431,7 @@ Sector
 <td style="text-align:center;">
 primary
 </td>
-<td style="text-align:center;color: rgba(252, 253, 191, 1) !important;">
+<td style="text-align:center;color: rgba(254, 159, 109, 1) !important;">
 0.2835
 </td>
 </tr>
@@ -1437,7 +1439,7 @@ primary
 <td style="text-align:center;">
 secondary
 </td>
-<td style="text-align:center;color: rgba(249, 121, 93, 1) !important;">
+<td style="text-align:center;color: rgba(213, 68, 109, 1) !important;">
 0.2494
 </td>
 </tr>
@@ -1445,7 +1447,7 @@ secondary
 <td style="text-align:center;">
 education
 </td>
-<td style="text-align:center;color: rgba(232, 83, 98, 1) !important;">
+<td style="text-align:center;color: rgba(184, 55, 121, 1) !important;">
 0.2383
 </td>
 </tr>
@@ -1453,7 +1455,7 @@ education
 <td style="text-align:center;">
 financial
 </td>
-<td style="text-align:center;color: rgba(144, 42, 129, 1) !important;">
+<td style="text-align:center;color: rgba(110, 30, 129, 1) !important;">
 0.2112
 </td>
 </tr>
@@ -1461,7 +1463,7 @@ financial
 <td style="text-align:center;">
 construction
 </td>
-<td style="text-align:center;color: rgba(100, 26, 128, 1) !important;">
+<td style="text-align:center;color: rgba(76, 17, 122, 1) !important;">
 0.1978
 </td>
 </tr>
@@ -1469,7 +1471,7 @@ construction
 <td style="text-align:center;">
 technology
 </td>
-<td style="text-align:center;color: rgba(84, 19, 125, 1) !important;">
+<td style="text-align:center;color: rgba(63, 15, 114, 1) !important;">
 0.1932
 </td>
 </tr>
@@ -1477,7 +1479,7 @@ technology
 <td style="text-align:center;">
 information
 </td>
-<td style="text-align:center;color: rgba(71, 16, 120, 1) !important;">
+<td style="text-align:center;color: rgba(51, 16, 104, 1) !important;">
 0.1892
 </td>
 </tr>
@@ -1485,7 +1487,7 @@ information
 <td style="text-align:center;">
 head
 </td>
-<td style="text-align:center;color: rgba(2, 2, 11, 1) !important;">
+<td style="text-align:center;color: rgba(2, 1, 9, 1) !important;">
 0.1640
 </td>
 </tr>
@@ -1493,7 +1495,7 @@ head
 <td style="text-align:center;">
 offices
 </td>
-<td style="text-align:center;color: rgba(2, 2, 11, 1) !important;">
+<td style="text-align:center;color: rgba(2, 1, 9, 1) !important;">
 0.1640
 </td>
 </tr>
@@ -1535,7 +1537,7 @@ calculating your word count. This is not the most straightforward in R
 Markdown, but there is a nice workaround.</p>
 <p>Copy and paste this code and add it into your document. Make sure it
 is <strong>not</strong> in a code cell. This is known as <em>inline
-code</em> and produces the following: <strong>Word count</strong>: 3071.
+code</em> and produces the following: <strong>Word count</strong>: 3077.
 You will likely get a different word count!</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r klippy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span>Word count<span class="sc">**</span><span class="er">:</span> <span class="st">`</span><span class="at">r as.integer(sub(&quot;(</span><span class="sc">\\</span><span class="at">d+).+$&quot;,&quot;</span><span class="sc">\\</span><span class="at">1&quot;,system(sprintf(&quot;wc -w %s&quot;, knitr::current_input()),intern=TRUE)))-20</span><span class="st">`</span></span></code></pre></div>
 </div>

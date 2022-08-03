@@ -278,7 +278,8 @@ kbl(x = sector_avg, booktabs = T,
   kable_styling(latex_options = "striped") %>%
   column_spec(column = 2, 
               color = spec_color(sector_avg$percent_increase_in_mens_wages_compared_to_womens, 
-                                 option = "A"))
+                                 option = "A", 
+                                 end = 0.8))
 ```
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
@@ -293,39 +294,39 @@ kbl(x = sector_avg, booktabs = T,
 <tbody>
   <tr>
    <td style="text-align:center;"> primary </td>
-   <td style="text-align:center;color: rgba(252, 253, 191, 1) !important;"> 0.2835 </td>
+   <td style="text-align:center;color: rgba(254, 159, 109, 1) !important;"> 0.2835 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> secondary </td>
-   <td style="text-align:center;color: rgba(249, 121, 93, 1) !important;"> 0.2494 </td>
+   <td style="text-align:center;color: rgba(213, 68, 109, 1) !important;"> 0.2494 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> education </td>
-   <td style="text-align:center;color: rgba(232, 83, 98, 1) !important;"> 0.2383 </td>
+   <td style="text-align:center;color: rgba(184, 55, 121, 1) !important;"> 0.2383 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> financial </td>
-   <td style="text-align:center;color: rgba(144, 42, 129, 1) !important;"> 0.2112 </td>
+   <td style="text-align:center;color: rgba(110, 30, 129, 1) !important;"> 0.2112 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> construction </td>
-   <td style="text-align:center;color: rgba(100, 26, 128, 1) !important;"> 0.1978 </td>
+   <td style="text-align:center;color: rgba(76, 17, 122, 1) !important;"> 0.1978 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> technology </td>
-   <td style="text-align:center;color: rgba(84, 19, 125, 1) !important;"> 0.1932 </td>
+   <td style="text-align:center;color: rgba(63, 15, 114, 1) !important;"> 0.1932 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> information </td>
-   <td style="text-align:center;color: rgba(71, 16, 120, 1) !important;"> 0.1892 </td>
+   <td style="text-align:center;color: rgba(51, 16, 104, 1) !important;"> 0.1892 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> head </td>
-   <td style="text-align:center;color: rgba(2, 2, 11, 1) !important;"> 0.1640 </td>
+   <td style="text-align:center;color: rgba(2, 1, 9, 1) !important;"> 0.1640 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> offices </td>
-   <td style="text-align:center;color: rgba(2, 2, 11, 1) !important;"> 0.1640 </td>
+   <td style="text-align:center;color: rgba(2, 1, 9, 1) !important;"> 0.1640 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> technical </td>
@@ -387,8 +388,9 @@ kbl(x = paygap_top, booktabs = T,
     percent gap in men’s wages compared to women’s wages.") %>% 
   kable_styling(latex_options = "striped") %>%
   column_spec(column = 2, 
-              color = spec_color(paygap_top$percent_increase_in_mens_wages_compared_to_womens, 
-                                 option = "A"))
+              color = spec_color(sector_avg$percent_increase_in_mens_wages_compared_to_womens, 
+                                 option = "A", 
+                                 end = 0.8))
 ```
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
@@ -403,39 +405,39 @@ kbl(x = paygap_top, booktabs = T,
 <tbody>
   <tr>
    <td style="text-align:center;"> primary </td>
-   <td style="text-align:center;color: rgba(252, 253, 191, 1) !important;"> 0.2835 </td>
+   <td style="text-align:center;color: rgba(254, 159, 109, 1) !important;"> 0.2835 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> secondary </td>
-   <td style="text-align:center;color: rgba(249, 121, 93, 1) !important;"> 0.2494 </td>
+   <td style="text-align:center;color: rgba(213, 68, 109, 1) !important;"> 0.2494 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> education </td>
-   <td style="text-align:center;color: rgba(232, 83, 98, 1) !important;"> 0.2383 </td>
+   <td style="text-align:center;color: rgba(184, 55, 121, 1) !important;"> 0.2383 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> financial </td>
-   <td style="text-align:center;color: rgba(144, 42, 129, 1) !important;"> 0.2112 </td>
+   <td style="text-align:center;color: rgba(110, 30, 129, 1) !important;"> 0.2112 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> construction </td>
-   <td style="text-align:center;color: rgba(100, 26, 128, 1) !important;"> 0.1978 </td>
+   <td style="text-align:center;color: rgba(76, 17, 122, 1) !important;"> 0.1978 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> technology </td>
-   <td style="text-align:center;color: rgba(84, 19, 125, 1) !important;"> 0.1932 </td>
+   <td style="text-align:center;color: rgba(63, 15, 114, 1) !important;"> 0.1932 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> information </td>
-   <td style="text-align:center;color: rgba(71, 16, 120, 1) !important;"> 0.1892 </td>
+   <td style="text-align:center;color: rgba(51, 16, 104, 1) !important;"> 0.1892 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> head </td>
-   <td style="text-align:center;color: rgba(2, 2, 11, 1) !important;"> 0.1640 </td>
+   <td style="text-align:center;color: rgba(2, 1, 9, 1) !important;"> 0.1640 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> offices </td>
-   <td style="text-align:center;color: rgba(2, 2, 11, 1) !important;"> 0.1640 </td>
+   <td style="text-align:center;color: rgba(2, 1, 9, 1) !important;"> 0.1640 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> technical </td>
@@ -462,7 +464,7 @@ Wow, we’ve just taken a pdf document and converted it to R Markdown!
 
 Last but not least you might be interested in either adding in or calculating your word count. This is not the most straightforward in R Markdown, but there is a nice workaround. 
 
-Copy and paste this code and add it into your document. Make sure it is **not** in a code cell. This is known as *inline code* and produces the following: **Word count**: 3071. You will likely get a different word count!
+Copy and paste this code and add it into your document. Make sure it is **not** in a code cell. This is known as *inline code* and produces the following: **Word count**: 3077. You will likely get a different word count!
 
 ```{.r .klippy}
 **Word count**: `r as.integer(sub("(\\d+).+$","\\1",system(sprintf("wc -w %s", knitr::current_input()),intern=TRUE)))-20`
