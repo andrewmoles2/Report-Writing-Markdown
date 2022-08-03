@@ -119,7 +119,7 @@ Feeling organised you collate everything you need into a folder which contains:
     + A gpkg file called `postcode_polygons.gpkg`
 
   
-**Click link to access the files**
+[Click link to access the files](https://lsecloud.sharepoint.com/:f:/s/TEAM_APD-DSL-Digital-Skills-Trainers/EsWvNEn-6hNOlV_KprhhPO0BnaX9kGt818trdnJX58W7Xw?e=aa3f1X)
 
 ### Task 0 — load the template into RStudio
 
