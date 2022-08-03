@@ -1,0 +1,37 @@
+---
+output:
+  pdf_document:
+    citation_package: natbib
+    keep_tex: true
+    fig_caption: true
+    latex_engine: pdflatex
+title: "your title here"
+# add footnote to title
+#thanks: "Replication files are available on the author's Github account"
+author: 
+- the author
+- the second author 
+abstract: "A very interesting abstract about my article"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+bibliography: "references.bib"
+biblio-style: apsr
+# now we can use latex style options
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 11pt
+urlcolor: green
+linkcolor: purple
+# spacing: double
+# to use extra latex packages you can add them here
+#header-includes:
+#  \usepackage{float}
+#  \floatplacement{figure}{H}
+---
+
+\newpage
+
+# Introduction
+
+Some text here about your introduction. 
+
+\newpage
