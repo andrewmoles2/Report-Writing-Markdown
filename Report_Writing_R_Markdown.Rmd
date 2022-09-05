@@ -8,7 +8,7 @@ output:
   html_document: 
     theme: united
     highlight: pygments
-    keep_md: yes
+    keep_md: no
     code_download: FALSE
     toc: TRUE
     toc_depth: 4
@@ -32,7 +32,11 @@ There are two main reasons for writing reports or presentations in R Markdown in
 
 There are very few disadvantages to using R Markdown over just LaTeX. One disadvantage is you need to use R and RStudio, which not everyone will have installed or feel comfortable using. 
 
+We should also note that R Markdown is a *flavour* of Markdown. Markdown can work with a wide range of programming languages from R, Python, C++, JavaScript, Bash, and SQL; all of which also work within RStudio!  
+
 ## Outcomes
+
+By the end of this workshop you will:
 
 * Start using R Markdown in RStudio
 * Create a document in R Markdown that includes
@@ -46,15 +50,17 @@ There are very few disadvantages to using R Markdown over just LaTeX. One disadv
   - references
 * Change outputs of code cells to get desired output
 
+It might feel like there is a lot to explore. However, we split it into separate sections to make it easier for you to work through. We hope you enjoy it!
+
 ## Requirements and setup
 
 For this workshop you will need the following software and packages. 
 
-### Software
+#### Software
 
-[R](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/)
+Make sure you have R and RStudio installed. If you haven’t, first install [R](https://www.r-project.org/) and then [RStudio](https://www.rstudio.com/products/rstudio/download/).
 
-### Packages
+#### Packages
 
 There are two main packages needed for this workshop, `rmarkdown` and `tinytex`. 
 
@@ -83,7 +89,7 @@ The white space is where we write our text. We can use markdown formatting here.
 
 The blue lines are headers. One # means top header, two # means second header and so on. We use these to make sections in our document. 
 
-The top part is the YAML where we tell R Markdown what output we want, who we are and so on; this creates metadata that is used to compile your documents. 
+The top part (the one that starts with title and ends with output between ---) is written in a so-called YAML language. Here we tell R Markdown what output we want, who we are and so on; this creates metadata that is used to compile your documents. 
 
 ## Useful resources to use during this session
 
@@ -123,13 +129,13 @@ Feeling organised you collate everything you need into a folder which contains:
 
 ### Task 0 — load the template into RStudio
 
-In RStudio go to file -> open file and open the `report_template.Rmd` file. 
+In RStudio go to File -> Open File and open the `report_template.Rmd` file.
 
 You'll notice a few things. First is the section at the top that has three dashes and some text like output, author etc. This is the YAML (YAML Ain’t Markup Language) header. 
 
 YAML in markdown is like the preamble section in LaTeX where we define what our document will look like. There are a lot of options and changes we can make. For now use this template and play around with it later! 
 
-Before going onto the next task, press the **knit** button to (or press shift+command/control+k) to compile your document so you can see what it looks like. 
+Before going onto the next task, press the **knit** button (or press shift+command/control+k) to compile your document so you can see what it looks like. 
 
 ### Task 1 — title page
 
@@ -143,7 +149,7 @@ Using the `gender_pay_gap.pdf` file as your example:
 
 Hint: everything you change here is in the YAML header.
 
-Note: the date will find today's date for you, which is handy. If you wanted to change it manually do can do that. 
+Note: the date will find today's date for you, which is handy. If you wanted to change it manually you can also do that. 
 
 ### Task 2 — contents
 
@@ -156,7 +162,9 @@ Next we set up the contents page which should include a table of contents, list 
 * Add a list of tables
 * Make sure your contents page are on a separate page to the rest of the document
 
-Hint: There are two ways of adding a table of contents, one is using YAML and the other is using LaTeX. If you get stuck check out the [LaTeX documentation via Overleaf](https://www.overleaf.com/learn/latex/Table_of_contents).
+Do not hesitate to search for ways to do it online!
+
+Hint: There are two ways of adding a table of contents, one is [using YAML](https://bookdown.org/yihui/rmarkdown/pdf-document.html) and the other is using LaTeX. If you get stuck check out the [LaTeX documentation via Overleaf](https://www.overleaf.com/learn/latex/Table_of_contents).
 
 ### Task 3 — organise your files
 
@@ -166,7 +174,7 @@ I recommend the following:
 
 1) Create a new folder/directory for this workshop
 2) Add your `report_template.Rmd` file and all the rest of the resources files there
-3) In RStudio in the file explore (bottom right window, file tab) you should see the files
+3) You should see the files in the file explorer (bottom right window in Rstudio, Files tab)
 4) You might get a message about file being moved or deleted. Don't worry, just open `report_template.Rmd` again and you're good to go
 
 When you can see the files in your RStudio file viewer, click on one of them like the `pay_gap_bot.png` file to open it. If it opens, you're good to move on! 
@@ -175,7 +183,7 @@ When you can see the files in your RStudio file viewer, click on one of them lik
 
 We are so organised! Now we can start adding the real content to the document. 
 
-* Copy introduction text from the pdf into Overleaf (make sure to paste in the introduction section)
+* Copy introduction text from the pdf into RStudio (make sure to paste in the introduction section)
 * Add the links. Click on the links to get the urls
 * Add the figure, which is the `pay_gap_bot.png image` file in your project
 * Make sure you’ve added a caption and your image is in the centre of the page
@@ -184,9 +192,62 @@ Hint: You can use markdown syntax to add the image, but to add a caption I'd rec
 
 Note: that to make the image the same as the example something like this in the chunk options will work: `out.width = '70%'`
 
-### Task 5 — methods
+#### Hold on, what are these code chunk options all about?
 
-If you have not done so already knit your document again so we can see the changes we made! Remember we press the **knit** button to (or press shift+command/control+k). You should see that the list of figures has appeared with an entry, yay!
+This section is ***strictly extra information*** which might be helpful in your future document writing endeavours. Feel free to skip over it and move on to [task 5](#methods).
+
+R Markdown works as a combination of plain text, markdown, and code chunks. Code chunks are anything that has two sets of the three **\`\`\`**. This is true for all markdown types and is usually shown as a different colour such as grey. The cool thing about R Markdown is that is allows you to run these code chunks interactivity. To insert a new code chunk in RStudio use either Ctrl+Alt+I for Windows or Cmd+Option+I for Mac. 
+
+The syntax for a code chunk is broken down as follows:
+
+1) They are wrapped with \`\`\` above and below. You will see they are a different colour to the rest of the document
+2) After the first \`\`\` you have curly brackets **\{\}** which contain the following:
+    * Which programming language you are using which will usually be r. This is what you see by default on every code chunk
+    * You can add a name of the code chunk which helps for referencing later
+    * Then you have options like do you want to show the code and output, or just the output, or change the size of a output and so on
+3) Then you have the actual code
+4) Finally you close the code chunk with another ``` 
+
+Below are two examples where we use some code to make a basic figure. One has chunk options, the other does not. Without chunk options we see everything. This is useful for showing collaborators, colleagues, and friends what you've done, but it is less good when you want a tidy report. 
+```{r}
+set.seed(19)
+x <- runif(100)
+y <- runif(100)
+plot(
+  x = x, y = y,
+  col = ifelse(y > 0.6 | x < 0.3, '#2BB3F1','#F26B2C'),
+  pch = 19,
+  main = "Example plot"
+)
+```
+
+With chunk options we can see how we can make the output more presentable if we were to use this in a report. We have added a caption, hidden the code, changed the size, and centred the output.  
+```{r my-plot, fig.align='center', fig.cap="my interesting caption", out.width="50%", echo=FALSE}
+set.seed(19)
+x <- runif(100)
+y <- runif(100)
+plot(
+  x = x, y = y,
+  col = ifelse(y > 0.6 | x < 0.3, '#2BB3F1','#F26B2C'),
+  pch = 19,
+  main = "Example plot"
+)
+```
+
+The options used are listed below, which have to go within the curly brackets.
+
+* I would first give the code chunk a name. Usually this is the first thing you add after the r. It will look something like `{r my-plot}`
+* Next, we can set up some figure parameters. There are lots of options, that start with the prefix *fig.*. We've used align and cap. It looks like `{fig.align="center" and fig.cap="my interesting caption"}`
+* Then we have changed the output, which starts with the *out.* prefix. We have used the width parameter which looks like `{out.width="50%"}`
+* Finally we hide the code using the echo parameter, which takes true or false, and it looks like `{echo=FALSE}`
+
+You end up with chunk options that look like: `{r my-plot, fig.align="center", fig.cap="my interesting caption", out.width="50%", echo=FALSE}`
+
+A side note on the side note is that there are other ways to define chunk options. Rather than write them here, the author of R Markdown has written about these in his [excellent documentation](https://yihui.org/knitr/options/). 
+
+### Task 5 — methods{#methods}
+
+If you have not done so already knit your document again so we can see the changes we made! Remember we press the **knit** button (or press shift+command/control+k) to compile our document with R Markdown. You should see that the list of figures has appeared with an entry, yay!
 
 The methods section has more new elements for us to try out such as equations and citations. 
 
@@ -235,7 +296,7 @@ Now our links are sorted, we can do the results section which has some new eleme
 * Copy the text from the results page in the pdf to your R Markdown document
 * Add the footnote about tokenisation
 * Add the two url links
-* The copied table doesn’t work! You think writing tables from scratch in markdown seems like a lot of effort. After a google search you find a [table convert tool](https://tableconvert.com/) which will do the hard work for you, great! Upload the `paygap_sector_average.csv` to the table converter to get your table
+* The copied table doesn’t work! You think writing tables from scratch in markdown seems like a lot of effort. After a Google search you find a [table convert tool](https://tableconvert.com/) which will do the hard work for you, great! Upload the `paygap_sector_average.csv` to the table converter to get your table
 * Once your table is in your document make sure it has a caption; [this SO thread should help](https://stackoverflow.com/questions/33965560/r-markdown-table-with-a-caption)
 * Add the figure, which is the `paygap.png` image file. Be sure to pay attention to the positioning of the figure, you might need to try different positions till it looks right
 * Make sure your figure has a label
@@ -279,7 +340,7 @@ kbl(x = sector_avg, booktabs = T,
                                  end = 0.8))
 ```
 
-This second example uses the code from the `sector_averages.R` script, then we display the output using `kableExtra`. I've included the code here but you can use chunk options to stop the code showing, such as using ` echo=FALSE`. I've also included `message=FALSE` and `warning=FALSE` in as chunk options so we don't get loading messages and such. 
+This second example uses the code from the `sector_averages.R` script, then we display the output using `kableExtra`. I've included the code here but you can use chunk options to stop the code showing, such as using `echo=FALSE`. I've also included `message=FALSE` and `warning=FALSE` in as chunk options so we don't get loading messages and such. 
 ```{r tab-example2, message=FALSE, warning=FALSE, class.source='klippy'}
 # load libraries
 library(tidytext)
@@ -367,13 +428,23 @@ Link to survey here
 
 Have a go at the take home challenge, or set your own challenge like converting a report or document you've previously written into R Markdown or LaTeX. You can try and use R Markdown or LaTeX for reports you write this year which is great opportunity to learn. 
 
-You also might wonder if there are other options than LaTeX and R Markdown. For example, what if you are not primarily an R user but want to get all the great features of R Markdown? These days you can also write Python as well as other code in R (and R Markdown), for example to use Python you used the [reticulate package](https://rstudio.github.io/reticulate/). However, there are other options. 
+You also might wonder if there are other options than LaTeX and R Markdown. For example, what if you are not primarily an R user but want to get all the great features of R Markdown? These days you can also write Python as well as other code in R (and R Markdown), for example to use Python you use the [reticulate package](https://rstudio.github.io/reticulate/). There are also other options available. 
 
-This is where [Quarto](https://quarto.org/) comes in. Quarto® is an open-source scientific and technical publishing system built on Pandoc that was released on 2022. It is designed to work just like R Markdown, including all the great R Markdown features as well as lots of fun extras. It can build reports, websites, presentations and more with code from Python, R, Julia, and Observable (JavaScript). It also works with RStudio, Jupyter Notebooks, and VS code so it very flexible. 
+This is where [Quarto](https://quarto.org/) comes in. Quarto® is an open-source scientific and technical publishing system built on Pandoc that was released on 2022. It is designed to work just like R Markdown, including all the great R Markdown features as well as lots of fun extras. It can build reports, websites, presentations and more with code from Python, R, Julia, and Observable (JavaScript). It also works with RStudio, Jupyter Notebooks, and VS code so it is very flexible. 
+
+We should also mention that Jupyter Notebooks has the ability to write publication ready reports using the [Jupyter book extension](https://jupyterbook.org/en/stable/intro.html). If you generally prefer Jupyter Notebooks then it is worth having a look, but from my experience it is less user-friendly and flexible than R Markdown and Quarto. I'd recommend using Quarto with Jupyter Notebooks from within [Visual Studio Code](https://code.visualstudio.com/) (VS Code) to get the best possible experience. Check out the [VS Code Jupyter extension](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) and how to use it [with Quarto](https://quarto.org/docs/get-started/hello/vscode.html); you can also do this with R and Julia. 
 
 ### Take home challenge
 
-Write your CV using R Markdown with the [vitae](https://github.com/mitchelloharawild/vitae) package! This is a very convenient way of writing and keeping your CV up to date as it is *data driven*. What this basically means is you keep all the information about your work, skills, experiences and so on in an Excel file (or google sheets), which you load into R Markdown to create a cool CV. 
+Write your CV using R Markdown with the [vitae](https://github.com/mitchelloharawild/vitae) package! This is a very convenient way of writing and keeping your CV up to date as it is *data driven*. What this basically means is you keep all the information about your work, skills, experiences and so on in an Excel file (or Google sheets), which you load into R Markdown to create a cool CV. 
 
 There are lots of good examples on the vitae GitHub page, but two I'd recommend are from [Lorena Abad](https://github.com/loreabad6/R-CV) and [Shazia Ruybal-Pesántez](https://github.com/shaziaruybal/cv). 
 
+My suggestion on getting started is the following:
+
+1) Install vitae with `install.packages('vitae')`
+2) Instead of using the examples with the package, use [Shazia Ruybal-Pesántez's](https://github.com/shaziaruybal/cv) CV as your template. To do this, click on `Code (green button) -> Download ZIP` which will download the files for you 
+3) In the data folder you will find `cv_data.xlsx`. You can change this so it has your experience and skills in it
+4) Load up the `cv-vitae.Rmd` file and change what you need, regularly compiling (knitting) to see what it looks like
+5) To make your CV exciting this is where [Lorena Abad's](https://github.com/loreabad6/R-CV) CV comes in. She wrote some custom formatting options in the `awesome-cv.cls` file. You can copy the contents of the file on her GitHub and paste it into your local copy of the `awesome-cv.cls` file. Knit your report to see the difference. 
+6) Now have a look through her [rmd file](https://github.com/loreabad6/R-CV/blob/master/CV.Rmd). She has icons with the headers which is a nice touch such as a briefcase with her work experience which looks like: `\faIcon{briefcase} Professional Experience`. Try and add some of these into your CV. *hint: You'll likely need the fontawesome package for this: https://github.com/rstudio/fontawesome*
