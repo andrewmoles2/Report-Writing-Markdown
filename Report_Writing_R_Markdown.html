@@ -820,7 +820,7 @@ pre code {
 <h1 class="title toc-ignore">Report writing with R Markdown</h1>
 <h4 class="author">Andrew Moles</h4>
 <address class="author_afil">
-Learning Developer, Digital Skills Lab<br><h4 class="date">05 September,
+Learning Developer, Digital Skills Lab<br><h4 class="date">07 September,
 2022</h4>
 
 </div>
@@ -1049,8 +1049,15 @@ image)</li>
 link to access the files</a></p>
 <div id="task-0-load-the-template-into-rstudio" class="section level3">
 <h3>Task 0 — load the template into RStudio</h3>
-<p>In RStudio go to File -&gt; Open File and open the
-<code>report_template.Rmd</code> file.</p>
+<ol style="list-style-type: decimal">
+<li>Download all the <a href="https://lsecloud.sharepoint.com/:f:/s/TEAM_APD-DSL-Digital-Skills-Trainers/EuB98M0onDpPrZY6cNrWkBcBhMH82p90h8keWN2u4B0FVQ?e=bAXjmK">files</a>
+to your computer</li>
+<li>Unzip/extract the files you have downloaded. On a Mac you double
+click the file to unzip, on a Windows you right-click -&gt; extract
+all</li>
+<li>In RStudio go to File -&gt; Open File and open the
+<code>report_template.Rmd</code> file.</li>
+</ol>
 <p>You’ll notice a few things. First is the section at the top that has
 three dashes and some text like output, author etc. This is the YAML
 (YAML Ain’t Markup Language) header.</p>
@@ -1230,13 +1237,20 @@ document</li>
 <li>Write the equations</li>
 <li>Add the references, all of which are in the references.bib file</li>
 </ul>
-<p>Reference hint 1: there are two ways to cite in R Markdown using
-either <code>@author</code> or <code>[@author]</code>.</p>
-<p>Reference hint 2: each reference in the references.bib file has a
-label which you use within the cite command like
-<code>@ggtext</code>.</p>
-<p>Equation hint: you can use LaTeX or markdown syntax to write
-equations.</p>
+<hr />
+<p><strong>Equation hint 1:</strong> you can use LaTeX or markdown
+syntax to write equations.</p>
+<p><strong>Equation hint 2:</strong> There are various shortcuts
+available to make your equation writing easier. If I wanted to write the
+below equation I’d need to do <code>$$ {2 \over 4} \times 5 $$</code>.
+<span class="math display">\[{2 \over 4} \times 5\]</span></p>
+<p><strong>Reference hint 1:</strong> there are two ways to cite in R
+Markdown using either <code>@author</code> or
+<code>[@author]</code>.</p>
+<p><strong>Reference hint 2:</strong> each reference in the
+references.bib file has a label which you use within the cite command
+like <code>@ggtext</code>.</p>
+<hr />
 <div id="general-note-about-references" class="section level4">
 <h4>General Note about references</h4>
 <p>The template, rather helpfully, has been set up to handle references
@@ -1629,7 +1643,7 @@ calculating your word count. This is not the most straightforward in R
 Markdown, but there is a nice workaround.</p>
 <p>Copy and paste this code and add it into your document. Make sure it
 is <strong>not</strong> in a code cell. This is known as <em>inline
-code</em> and produces the following: <strong>Word count</strong>: 4069.
+code</em> and produces the following: <strong>Word count</strong>: 4144.
 You will likely get a different word count!</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r klippy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span>Word count<span class="sc">**</span><span class="er">:</span> <span class="st">`</span><span class="at">r as.integer(sub(&quot;(</span><span class="sc">\\</span><span class="at">d+).+$&quot;,&quot;</span><span class="sc">\\</span><span class="at">1&quot;,system(sprintf(&quot;wc -w %s&quot;, knitr::current_input()),intern=TRUE)))-20</span><span class="st">`</span></span></code></pre></div>
 </div>

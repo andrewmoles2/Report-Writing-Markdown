@@ -129,7 +129,9 @@ Feeling organised you collate everything you need into a folder which contains:
 
 ### Task 0 — load the template into RStudio
 
-In RStudio go to File -> Open File and open the `report_template.Rmd` file.
+1) Download all the [files](https://lsecloud.sharepoint.com/:f:/s/TEAM_APD-DSL-Digital-Skills-Trainers/EuB98M0onDpPrZY6cNrWkBcBhMH82p90h8keWN2u4B0FVQ?e=bAXjmK) to your computer
+2) Unzip/extract the files you have downloaded. On a Mac you double click the file to unzip, on a Windows you right-click -> extract all
+3) In RStudio go to File -> Open File and open the `report_template.Rmd` file.
 
 You'll notice a few things. First is the section at the top that has three dashes and some text like output, author etc. This is the YAML (YAML Ain’t Markup Language) header. 
 
@@ -258,11 +260,17 @@ The methods section has more new elements for us to try out such as equations an
 * Write the equations
 * Add the references, all of which are in the references.bib file
 
-Reference hint 1: there are two ways to cite in R Markdown using either `@author` or `[@author]`.
+***
 
-Reference hint 2: each reference in the references.bib file has a label which you use within the cite command like `@ggtext`.
+**Equation hint 1:** you can use LaTeX or markdown syntax to write equations. 
 
-Equation hint: you can use LaTeX or markdown syntax to write equations. 
+**Equation hint 2:** There are various shortcuts available to make your equation writing easier. If I wanted to write the below equation I'd need to do `$$ {2 \over 4} \times 5 $$`. $${2 \over 4} \times 5$$
+
+**Reference hint 1:** there are two ways to cite in R Markdown using either `@author` or `[@author]`.
+
+**Reference hint 2:** each reference in the references.bib file has a label which you use within the cite command like `@ggtext`.
+
+***
 
 #### General Note about references
 
