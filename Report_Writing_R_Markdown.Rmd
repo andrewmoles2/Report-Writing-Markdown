@@ -34,6 +34,8 @@ There are very few disadvantages to using R Markdown over just LaTeX. One disadv
 
 We should also note that R Markdown is a *flavour* of Markdown. Markdown can work with a wide range of programming languages from R, Python, C++, JavaScript, Bash, and SQL; all of which also work within RStudio!  
 
+![Artwork by @allison_horst](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/4898fb61-98e9-4923-8725-6813d4de2d82_rw_1920.png?h=f630a201b70bb08cd37af0606f10cc47)
+
 ## Outcomes
 
 By the end of this workshop you will:
