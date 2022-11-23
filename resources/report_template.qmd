@@ -1,0 +1,36 @@
+---
+# first we define the document format, in this case pdf
+format: 
+  pdf: 
+    documentclass: article
+    cap-location: bottom
+    keep-tex: true
+    colorlinks: true
+    cite-method: natbib
+  
+# then we have our title and other information
+title: "Your title here"
+thanks: "Add footnote to title"
+author: 
+- The Author
+- The Second Author
+abstract: "A very interesting abstract about my article"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+# finally we have the rest of the options to change the style, similar to latex
+pdf-engine: pdflatex
+fontsize: 11pt
+geometry: margin=1in
+urlcolor: green
+linkcolor: purple
+bibliography: "references.bib"
+# linestretch: 2 # to apply double spacing
+---
+
+\newpage
+
+# Introduction
+
+Some text here about your introduction. 
+
+\newpage

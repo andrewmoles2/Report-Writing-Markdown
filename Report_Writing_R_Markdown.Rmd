@@ -24,7 +24,7 @@ library(knitr)
 
 ## What is R Markdown and why use it?
 
-R Markdown is a tool for making dynamic document with R which combines markdown, a lightweight markup language that is an easy-to-write plain text format, and sections or *chunks* of embedded R code. This is powerful as is allows you to write reports or presentations that contain your R code.
+R Markdown is a tool for making dynamic documents with R which combines markdown, a lightweight markup language that is an easy-to-write plain text format, and sections or *chunks* of embedded R code. This is powerful as is allows you to write reports or presentations that contain your R code.
 
 Markdown is a flexible and lightweight tool for document writing. Two good sources of picking up the basic syntax are the [markdown guide](https://www.markdownguide.org/basic-syntax) and the [markdown tutorial](https://commonmark.org/help/tutorial/). You can use these as points of reference throughout this tutorial. 
 
@@ -34,14 +34,16 @@ There are very few disadvantages to using R Markdown over just LaTeX. One disadv
 
 We should also note that R Markdown is a *flavour* of Markdown. Markdown can work with a wide range of programming languages from R, Python, C++, JavaScript, Bash, and SQL; all of which also work within RStudio!  
 
+For this workshop we will be using [Quarto](https://quarto.org/), which is a new (2022) piece of software built on R Markdown and designed to bring some quality of life improvements from R Markdown. Quarto works in the same way as R Markdown, so if you know one you will know both. 
+
 ![Artwork by @allison_horst](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/4898fb61-98e9-4923-8725-6813d4de2d82_rw_1920.png?h=f630a201b70bb08cd37af0606f10cc47)
 
 ## Outcomes
 
 By the end of this workshop you will:
 
-* Start using R Markdown in RStudio
-* Create a document in R Markdown that includes
+* Start using Quarto (R Markdown) in RStudio
+* Create a document in Quarto (R Markdown) that includes
   - titles
   - sections
   - images
@@ -64,10 +66,19 @@ Make sure you have R and RStudio installed. If you haven’t, first install [R](
 
 #### Packages
 
+We will need to install [Quarto](https://quarto.org/docs/get-started/), select the installer which matches your device (Windows or Mac). Then follow the installation instructions. 
+
+Once you have installed Quarto, open RStudio run the below command to make sure the package is installed and loaded. 
+```{r install, class.source='klippy', eval=FALSE}
+install.packages("quarto")
+library(quarto)
+```
+
+<!--
 There are two main packages needed for this workshop, `rmarkdown` and `tinytex`. 
 
 To install and load the packages copy the contents of this code chunk. 
-```{r install, class.source='klippy', eval=FALSE}
+```{r install_old, class.source='klippy', eval=FALSE}
 install.packages("rmarkdown")
 install.packages("tinytex")
 
@@ -81,29 +92,37 @@ To use LaTeX and render the output as pdf we will also need to install tinytex a
 tinytex::install_tinytex()
 ```
 
-## Introduction to R Markdown
+-->
 
-When you open a R Markdown document, which has the extension of `.Rmd` you will see an interface like this. 
-![R Markdown interface](https://raw.githubusercontent.com/andrewmoles2/rTrainIntroduction/main/r-fundamentals-1/Images/RMarkdown.png)
+## Introduction to Quarto
+
+When you open a Quarto document, which has the extension of `.qmd` you will see an interface like this. 
+
+```{r interface, echo=FALSE, out.width='85%'}
+knitr::include_graphics("./images/quarto.png")
+```
+
 The grey areas are the code chunks. To run code cells you click on the green play button or use `control/command + enter`
 
 The white space is where we write our text. We can use markdown formatting here. 
 
-The blue lines are headers. One # means top header, two # means second header and so on. We use these to make sections in our document. 
+The blue # are headers. One # means top header, two # means second header and so on. We use these to make sections in our document. 
 
-The top part (the one that starts with title and ends with output between ---) is written in a so-called YAML language. Here we tell R Markdown what output we want, who we are and so on; this creates metadata that is used to compile your documents. 
+The top part (the one that starts with title and ends with output between ---) is written in a so-called YAML language. Here we tell Quarto what output we want, who we are and so on; this creates metadata that is used to compile your documents. 
 
 ## Useful resources to use during this session
 
 * The [R Markdown book](https://bookdown.org/yihui/rmarkdown/)
+* [Quarto documentation](https://quarto.org/docs/output-formats/pdf-basics.html)
 * [R Markdown manuscript](http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/) has some very clear descriptions of YAML and Markdown syntax
-* Google searching what you need - e.g. *footnotes r markdown*
+* Google searching what you need - e.g. *footnotes quarto*
 
 ### Extra resources for after the session
 
 * Introduction to R Markdown [tutorial](https://ourcodingclub.github.io/tutorials/rmarkdown/)
 * Coding club write your [dissertation in R Markdown](https://ourcodingclub.github.io/tutorials/rmarkdown-dissertation/)
 * Write your thesis in R Markdown [short guide](https://rosannavanhespen.nl/thesis-in-rmarkdown/) which comes with [nice templates](https://github.com/rosannav/thesis_in_rmarkdown/tree/master/example_thesis)
+* Write your thesis with Quarto using this [more recent guide](https://biostats-r.github.io/biostats/quarto/)
 * List of other [useful R Markdown resources](https://www.one-tab.com/page/d00HO6mxTTuqo2o7aGCffQ)
 
 ## Exercises
@@ -115,7 +134,7 @@ The author of the article was feeling generous and also sent you the code and da
 Feeling organised you collate everything you need into a folder which contains:
 
 * The pdf of the document to convert called `gender_pay_gap.pdf`
-* R Markdown template called `report_template.Rmd`
+* Quarto template called `report_template.qmd`
 * References file called `references.bib`
 * An image called `pay_gap_bot.png`
 * A folder called `analysis` that contains the following:
@@ -133,7 +152,7 @@ Feeling organised you collate everything you need into a folder which contains:
 
 1) Download all the [files](https://lsecloud.sharepoint.com/:f:/s/TEAM_APD-DSL-Digital-Skills-Trainers/EuB98M0onDpPrZY6cNrWkBcBhMH82p90h8keWN2u4B0FVQ?e=bAXjmK) to your computer
 2) Unzip/extract the files you have downloaded. On a Mac you double click the file to unzip, on a Windows you right-click -> extract all
-3) In RStudio go to File -> Open File and open the `report_template.Rmd` file.
+3) In RStudio go to File -> Open File and open the `report_template.qmd` file.
 
 You'll notice a few things. First is the section at the top that has three dashes and some text like output, author etc. This is the YAML (YAML Ain’t Markup Language) header. 
 
@@ -143,7 +162,7 @@ Before going onto the next task, press the **knit** button (or press shift+comma
 
 ### Task 1 — title page
 
-We have a R Markdown template, first thing we want to do is to build up that title page! 
+We have a document template, first thing we want to do is to build up that title page! 
 
 Using the `gender_pay_gap.pdf` file as your example:
 
@@ -168,7 +187,7 @@ Next we set up the contents page which should include a table of contents, list 
 
 Do not hesitate to search for ways to do it online!
 
-Hint: There are two ways of adding a table of contents, one is [using YAML](https://bookdown.org/yihui/rmarkdown/pdf-document.html) and the other is using LaTeX. If you get stuck check out the [LaTeX documentation via Overleaf](https://www.overleaf.com/learn/latex/Table_of_contents).
+Hint: To match the document exactly you'll need to use LaTeX, adding the LaTeX code **after** the YAML header (the three dashes at the top of the page). If you get stuck check out the [LaTeX documentation via Overleaf](https://www.overleaf.com/learn/latex/Table_of_contents). You can also do this with Quarto, and it is explained in their documentation, LaTeX is simpler though in this case. 
 
 ### Task 3 — organise your files
 
@@ -177,9 +196,9 @@ For the next tasks we will need to use the resources the author sent us.
 I recommend the following:
 
 1) Create a new folder/directory for this workshop
-2) Add your `report_template.Rmd` file and all the rest of the resources files there
+2) Add your `report_template.qmd` file and all the rest of the resources files there
 3) You should see the files in the file explorer (bottom right window in Rstudio, Files tab)
-4) You might get a message about file being moved or deleted. Don't worry, just open `report_template.Rmd` again and you're good to go
+4) You might get a message about file being moved or deleted. Don't worry, just open `report_template.qmd` again and you're good to go
 
 When you can see the files in your RStudio file viewer, click on one of them like the `pay_gap_bot.png` file to open it. If it opens, you're good to move on! 
 
@@ -200,7 +219,7 @@ Note: that to make the image the same as the example something like this in the 
 
 This section is ***strictly extra information*** which might be helpful in your future document writing endeavours. Feel free to skip over it and move on to [task 5](#methods).
 
-R Markdown works as a combination of plain text, markdown, and code chunks. Code chunks are anything that has two sets of the three **\`\`\`**. This is true for all markdown types and is usually shown as a different colour such as grey. The cool thing about R Markdown is that is allows you to run these code chunks interactivity. To insert a new code chunk in RStudio use either Ctrl+Alt+I for Windows or Cmd+Option+I for Mac. 
+R Markdown works as a combination of plain text, markdown, and code chunks. Code chunks are anything that has two sets of the three **\`\`\`**. This is true for all markdown types and is usually shown as a different colour such as grey. The cool thing about R Markdown is that is allows you to run these code chunks interactivity. To insert a new code chunk in RStudio use either *Ctrl+Alt+I* for Windows or *Cmd+Option+I* for Mac. 
 
 The syntax for a code chunk is broken down as follows:
 
@@ -247,7 +266,7 @@ The options used are listed below, which have to go within the curly brackets.
 
 You end up with chunk options that look like: `{r my-plot, fig.align="center", fig.cap="my interesting caption", out.width="50%", echo=FALSE}`
 
-A side note on the side note is that there are other ways to define chunk options. Rather than write them here, the author of R Markdown has written about these in his [excellent documentation](https://yihui.org/knitr/options/). 
+Some side notes on the side note is that there are other ways to define chunk options. Rather than write them here, the author of R Markdown has written about these in his [excellent documentation](https://yihui.org/knitr/options/) and the [Quarto documentation](https://quarto.org/docs/computations/r.html#chunk-options) details how chunk options can be different in Quarto to R markdown. 
 
 ### Task 5 — methods{#methods}
 
@@ -284,8 +303,7 @@ biblio-style: apsr
 ```
 
 As soon as you add in a reference, the references page will appear at the bottom of your document. 
-
-You can change the referencing style to whatever you need and the [R Markdown book](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) provides a guide to this. 
+You can change the referencing style to whatever you need and the [R Markdown book](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) or [Quarto documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html) provide a guide to this. 
 
 ### Task 6 — hyperlinks 
 
@@ -436,13 +454,15 @@ Copy and paste this code and add it into your document. Make sure it is **not** 
 
 ## What's next?
 
-Have a go at the take home challenge, or set your own challenge like converting a report or document you've previously written into R Markdown or LaTeX. You can try and use R Markdown or LaTeX for reports you write this year which is great opportunity to learn. 
+Have a go at the take home challenge, or set your own challenge like converting a report or document you've previously written into Quarto/R Markdown or LaTeX. You can try and use Quarto/R Markdown or LaTeX for reports you write this year which is great opportunity to learn. 
 
-You also might wonder if there are other options than LaTeX and R Markdown. For example, what if you are not primarily an R user but want to get all the great features of R Markdown? These days you can also write Python as well as other code in R (and R Markdown), for example to use Python you use the [reticulate package](https://rstudio.github.io/reticulate/). There are also other options available. 
+You also might wonder if there are other options than LaTeX and Quarto/R Markdown. For example, what if you are not primarily an R user but want to get all the great features of Quarto/R Markdown? 
 
-This is where [Quarto](https://quarto.org/) comes in. Quarto® is an open-source scientific and technical publishing system built on Pandoc that was released on 2022. It is designed to work just like R Markdown, including all the great R Markdown features as well as lots of fun extras. It can build reports, websites, presentations and more with code from Python, R, Julia, and Observable (JavaScript). It also works with RStudio, Jupyter Notebooks, and VS code so it is very flexible. 
+The great news is Quarto is designed to be multi-lingual, so you can do what we did today but instead use Quarto with Jupyter Notebooks or VS Code instead, using Python code for any analysis you want to add. 
 
-We should also mention that Jupyter Notebooks has the ability to write publication ready reports using the [Jupyter book extension](https://jupyterbook.org/en/stable/intro.html). If you generally prefer Jupyter Notebooks then it is worth having a look, but from my experience it is less user-friendly and flexible than R Markdown and Quarto. I'd recommend using Quarto with Jupyter Notebooks from within [Visual Studio Code](https://code.visualstudio.com/) (VS Code) to get the best possible experience. Check out the [VS Code Jupyter extension](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) and how to use it [with Quarto](https://quarto.org/docs/get-started/hello/vscode.html); you can also do this with R and Julia. 
+These days you can also write Python as well as other code in RStudio, for example to use Python you use the [reticulate package](https://rstudio.github.io/reticulate/). There are also other options available to code in c++, JavaScript and more. 
+
+We should also mention that Jupyter Notebooks has the ability to write publication ready reports using the [Jupyter book extension](https://jupyterbook.org/en/stable/intro.html). If you generally prefer Jupyter Notebooks then it is worth having a look, but from my experience it is less user-friendly and flexible than R Markdown/Quarto. I'd recommend using Quarto with Jupyter Notebooks from within [Visual Studio Code](https://code.visualstudio.com/) (VS Code) to get the best possible experience. Check out the [VS Code Jupyter extension](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) and how to use it [with Quarto](https://quarto.org/docs/get-started/hello/vscode.html); you can also do this with R and Julia. 
 
 ### Take home challenge
 
