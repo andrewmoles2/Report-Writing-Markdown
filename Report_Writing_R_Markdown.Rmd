@@ -66,13 +66,61 @@ Make sure you have R and RStudio installed. If you haven’t, first install [R](
 
 #### Packages
 
-We will need to install [Quarto](https://quarto.org/docs/get-started/), select the installer which matches your device (Windows or Mac). Then follow the installation instructions. 
+As we are using Quarto as our markdown tool, there are a few steps to go through to get it up and running. 
 
-Once you have installed Quarto, open RStudio run the below command to make sure the package is installed and loaded. 
+We will need to install [Quarto](https://quarto.org/docs/get-started/), select the installer which matches your device (Windows or Mac). Then follow the installation instructions. *If installing on the library computers, just install it for your own profile*
+
+Next you will need to install tinytex. Depending on if you are on a Mac or a Windows the series of images below will guide you through this. 
+
+##### Windows
+
+First step on a windows machine is to search for terminal or command prompt in the search bar at the bottom right of your screen. Then open command prompt. 
+
+```{r win_t1, echo=FALSE, out.width='45%', fig.pos='h'}
+knitr::include_graphics("images/open-terminal.png")
+```
+
+Once the command prompt is open, type in or copy the following command: quarto install tinytex
+
+An install programme should run, when completed you should see a message saying installation complete (or similar). This means you'll be ready to go to the next step. 
+
+```{r win_t2, echo=FALSE, out.width='50%', fig.pos='h'}
+knitr::include_graphics("images/terminal.png")
+```
+
+***
+
+##### Mac
+
+The first step on a mac is to select the go menu on the top bar -> then utilities (or use shift+command+U)
+
+```{r mac-t1, echo=FALSE, out.width='40%',fig.pos='h'}
+knitr::include_graphics("images/utilities.png")
+```
+
+When in the utilities screen, select the terminal to open it. 
+
+```{r mac-t2, echo=FALSE, out.width='50%',fig.pos='h'}
+knitr::include_graphics("images/terminal1.png")
+```
+
+Once the terminal is open, type the following command in install tinytex: quarto install tinytex
+
+An install programme should run, when completed you should see a message saying installation complete (or similar). This means you'll be ready to go to the next step. 
+
+```{r mac-t3, echo=FALSE, out.width='50%',fig.pos='h'}
+knitr::include_graphics("images/terminal2.png")
+```
+
+***
+
+Once you have installed Quarto and tinytex, open RStudio run the below command to make sure the package is installed and loaded. 
 ```{r install, class.source='klippy', eval=FALSE}
 install.packages("quarto")
 library(quarto)
 ```
+
+We are now up and ready to write some pdf reports! 
 
 <!--
 There are two main packages needed for this workshop, `rmarkdown` and `tinytex`. 
