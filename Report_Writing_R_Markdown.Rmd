@@ -341,7 +341,9 @@ The methods section has more new elements for us to try out such as equations an
 
 ***
 
-#### General Note about references
+#### General notes about references
+
+The LSE Library team offers a lot of support and advice on citing and referencing your own work. Information on this support can be found on the [library web page](https://www.lse.ac.uk/library/using-the-library/library-resources-guide/citing-and-referencing).
 
 The template, rather helpfully, has been set up to handle references and citations. When using R Markdown, to use references you just need to add the following two lines in the YAML header. 
 
@@ -349,6 +351,8 @@ The template, rather helpfully, has been set up to handle references and citatio
 bibliography: "references.bib"
 biblio-style: apsr
 ```
+
+Note that the command `biblio-style: apsr` tells Markdown what referencing style to use, which in this case is the *American Political Science Review* style. There are many possibilities, so before choosing a style for your own work, you should check with your department or librarian. A full list of bibliography styles is available on [this website](https://www.bibtex.com/bibliography-styles/). 
 
 As soon as you add in a reference, the references page will appear at the bottom of your document. 
 You can change the referencing style to whatever you need and the [R Markdown book](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) or [Quarto documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html) provide a guide to this. 
