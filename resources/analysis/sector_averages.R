@@ -2,7 +2,7 @@ library(tidytext)
 library(tidyverse)
 
 paygap <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-06-28/paygap.csv')
-uk_sic_codes <- read_csv("analysis/data/SIC07_CH_condensed_list_en.csv") %>%
+uk_sic_codes <- read_csv("https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/527619/SIC07_CH_condensed_list_en.csv") %>%
   janitor::clean_names()
 
 paygap_joined <- paygap %>%
@@ -34,4 +34,5 @@ paygap_final <- paygap_token %>%
 
 paygap_final
 
-write_csv(paygap_final %>% slice_head(n = 10), "analysis/data/paygap_sector_averages.csv")
+write_csv(paygap_final %>% slice_head(n = 10), "resources/analysis/data/paygap_sector_averages.csv")
+#write_csv(paygap_final %>% slice_head(n = 10), "analysis/data/paygap_sector_averages.csv")
