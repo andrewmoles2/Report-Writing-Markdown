@@ -213,7 +213,7 @@ You'll notice a few things. First is the section at the top that has three dashe
 
 YAML in markdown is like the preamble section in LaTeX where we define what our document will look like. There are a lot of options and changes we can make. For now use this template and play around with it later! 
 
-Before going onto the next task, press the **knit** button (or press `shift+command/control+k`) to compile your document so you can see what it looks like. 
+Before going onto the next task, press the **render** button (or press `shift+command/control+k`) to compile your document so you can see what it looks like. 
 
 ### Task 1 — title page
 
@@ -325,7 +325,7 @@ Some side notes on the side note is that there are other ways to define chunk op
 
 ### Task 5 — methods{#methods}
 
-If you have not done so already knit your document again so we can see the changes we made! Remember we press the **knit** button (or press `shift+command/control+k`) to compile our document with Quarto. You should see that the list of figures has appeared with an entry, yay!
+If you have not done so already render your document again so we can see the changes we made! Remember we press the **render** button (or press `shift+command/control+k`) to compile our document with Quarto. You should see that the list of figures has appeared with an entry, yay!
 
 The methods section has more new elements for us to try out such as equations and citations. 
 
@@ -365,7 +365,7 @@ As soon as you add in a reference, the references page will appear at the bottom
 
 ### Task 6 — hyperlinks 
 
-When you re-knit your document you should see a reference page at the bottom! 
+When you re-render your document you should see a reference page at the bottom! 
 
 However, you notice that the colour of the citations, and the links you added, look different to the pdf document we are trying to replicate. How do we fix this irregularity? 
 
@@ -477,7 +477,7 @@ There is also a new(ish) [Quarto extension](https://github.com/andrewheiss/quart
 
 ### Final task — take our survey
 
-<https://lse.eu.qualtrics.com/jfe/form/SV_6eSrOVWuit28qcS?coursename=Report%writing%with%Markdown&topic=LaTeX&prog=SR&version=23-24&link=https://github.com/andrewmoles2/gender_pay_gap_example>
+<https://lse.eu.qualtrics.com/jfe/form/SV_ewXuHQ1nRnurTdY?coursename=Report%writing%with%Markdown&topic=Markdown&prog=SR&version=23-24&link=https://github.com/andrewmoles2/gender_pay_gap_example>
 
 ## What's next?
 
